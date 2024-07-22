@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wreck song</title>
+    <style>
+        body {
+            background-image: url('./images/wreck.png');
+            background-size: cover;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+       
+        .button {
+            display: inline-block;
+            margin: 20px;
+            padding: 10px 20px;
+            background-image: url('./images/wreck.png')cover ;
+            background-size: cover;
+            color: white;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+        }      
+        h1 {
+            text-align: center;
+            margin-top: 15vh;
+            font-size: 24px;
+            color: #FF00BF;
+        }
+        h2 {
+            font-size: 24px;
+            color: #0101DF;
+        }
+        .audio-controls {
+      margin-top: 20px;
+    }
+
+    .hacker-button {
+      background-color: #000;
+      color: #f00;
+      border: 2px solid #f00;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    .hacker-button:hover {
+      background-color: #f00;
+      color: #fff;
+    }
+ 
+    </style>
+    <script>
+    window.onload = function() {
+      const audio = new Audio('./audio/wreck.mp3');
+      const playButton = document.getElementById('play-btn');
+      const stopButton = document.getElementById('stop-btn');
+
+      playButton.addEventListener('click', () => {
+        audio.play();
+      });
+
+      stopButton.addEventListener('click', () => {
+        audio.pause();
+        audio.currentTime = 0;
+      });
+    };
+
+    document.addEventListener('contextmenu', event => event.preventDefault()); // Continue even right-click context menu
+    document.onkeydown = function (e) { // Disable copy, cut, and paste
+      if (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 86 || e.keyCode === 85)) {
+        return false;
+      } else {
+        return true;
+      }
+    };
+  </script>
+</head>
+
+<body>
+    <div>
+        
+        <h1>BACK TO ME</h1>
+        <div class="audio-controls">
+    <button id="play-btn" class="hacker-button">Play</button>
+    <button id="stop-btn" class="hacker-button">Stop</button>
+  </div>
+        
+   <footer>
+     <h2><p>even the thousands miles trip <b>began with single step</b></p></h2>
+    <h1><p>&copy; copyright owned by VENOCYBER TECH</p></h1>
+   </footer>
+    </div>
+</body>
+
+</html>
